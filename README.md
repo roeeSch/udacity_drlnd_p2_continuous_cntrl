@@ -2,6 +2,18 @@
 
 # Continuous Control DRL Project
 
+This repository documents my solution to project #2 in the Udacity Deep Reinforcement Learning nano degree.
+
+The project goal is to write a DRL algorithm to solve the reacher environment.
+
+In this environment, a double-jointed arm can move to target locations. A reward is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+
+The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+
+
+
+![reacher](report_images/reacher.gif)
+
 
 
 
@@ -62,4 +74,8 @@ For plotting former results:
 ```bash
 $python reacher-ppo/Solution.py --pltLrn
 ```
+
+
+
+For a deeper understanding of this project refer to the ```report.md``` file.
 
