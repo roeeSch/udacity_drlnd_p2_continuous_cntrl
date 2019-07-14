@@ -10,9 +10,7 @@ In this environment, a double-jointed arm is controlled to move its hand (blue b
 
 The observation space consists of **33** variables corresponding to position, rotation, velocity, and angular velocities of the arm as well as the position of the target. Each action is a vector with **4** numbers, corresponding to torque applicable at each of the two joints. Every entry in the action vector should be a number between -1 and 1.
 
-
-
-![reacher](report_images/reacher.gif)
+<img src='report_images/reacher.gif' style='zoom:100%'>
 
 In the above animation you can see a similar environment with 10 trained agents (arms) tracking the target green spheres. The environment consisting of multiple agents is desirable when training. 
 
@@ -34,7 +32,7 @@ Since finding code that solves the above environment is not a huge challenge and
 
 The details of the implementation and the test I made are summarized in the ```report.md``` (in this git repository). The main outcome is the following graph:
 
-![1562857315785](report_images/hiddSizeEffect.png)
+<img src='report_images/hiddSizeEffect.png' style='zoom:100%'>
 
 The graph shows the learning progession of different agents that differ from each other only by their neural-network hidden layer size. 
 
