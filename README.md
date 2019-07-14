@@ -22,7 +22,7 @@ In the above animation you can see a similar environment with 10 trained agents 
 
 According to [Proximal Policy Optimization Algorithms](https://arxiv.org/pdf/1707.06347.pdf), the PPO algorithm studied in the course is a great choice for solving this environment as can be seen in the following figure:
 
-![1562857315785](report_images/reacherv1_ppo.png)
+<img src='report_images/reacherv1_ppo.png' style='zoom:80%'>
 
 ​						**Picture taken from  [Proximal Policy Optimization Algorithms](https://arxiv.org/pdf/1707.06347.pdf)**
 
