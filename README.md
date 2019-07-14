@@ -87,10 +87,12 @@ Then unzip (or decompress) the file. Rename directory to ```Reacher_Linux_1agent
 
 ## Step 3
 
-Clone this repository and run the following:
+Clone this repository and run the following.
+
+To reproduce the results:
 
 ```bash
-$python reacher-ppo/Solution.py --learn --pltLrn --numEpisodes 100
+$python reacher-ppo/Solution.py --numEpisodes 300 --gridSrchHidden 32 64 96 128 160 192 224 256 288
 ```
 
 For plotting former results:
