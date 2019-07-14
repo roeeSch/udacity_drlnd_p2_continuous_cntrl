@@ -2,19 +2,45 @@
 
 # Continuous Control DRL Project
 
-This repository documents my solution to project #2 in the Udacity Deep Reinforcement Learning nano degree.
+This repository documents my solution to project #2 in the Udacity nano degree in Deep Reinforcement Learning. The project goal is to write a deep reinforcement learning algorithm which solves the reacher environment.
 
-The project goal is to write a DRL algorithm to solve the reacher environment.
+## Overview
 
-In this environment, a double-jointed arm can move to target locations. A reward is provided for each step that the agent's hand is in the goal location. Thus, the goal of your agent is to maintain its position at the target location for as many time steps as possible.
+In this environment, a double-jointed arm is controlled to move its hand (blue ball at the tip of the arm) to a moving target location (green moving ball). A reward is provided for each step that the agent's hand is in the goal location. Thus, the goal of the agent is to maintain its position at the target location for as many time steps as possible.
 
-The observation space consists of 33 variables corresponding to position, rotation, velocity, and angular velocities of the arm. Each action is a vector with four numbers, corresponding to torque applicable to two joints. Every entry in the action vector should be a number between -1 and 1.
+The observation space consists of **33** variables corresponding to position, rotation, velocity, and angular velocities of the arm as well as the position of the target. Each action is a vector with **4** numbers, corresponding to torque applicable at each of the two joints. Every entry in the action vector should be a number between -1 and 1.
 
 
 
 ![reacher](report_images/reacher.gif)
 
+In the above animation you can see a similar environment with 10 trained agents (arms) tracking the target green spheres. The environment consisting of multiple agents is desirable when training. 
 
+
+
+## The chosen algorithm
+
+According to [Proximal Policy Optimization Algorithms](https://arxiv.org/pdf/1707.06347.pdf), the PPO algorithm studied in the course is a great choice for solving this environment as can be seen in the following figure:
+
+![1562857315785](/home/roees/projForDRL/udacity_drlnd_p2_continuous_cntrl/report_images/reacherv1_ppo.png)
+
+​						**Picture taken from  [Proximal Policy Optimization Algorithms](https://arxiv.org/pdf/1707.06347.pdf)**
+
+
+
+## General Approach
+
+Since finding code that solves the above environment is not a huge challenge and not the most educational, I chose to take advantage of this opportunity to study the affect of variable neural network size on performance and learning rate. The code in this repository is based on [Jeremi Kaczmarczyk](https://github.com/jknthn/reacher-ppo.git) and  [ShangtongZhang](https://github.com/ShangtongZhang/DeepRL) git repository and most of the hyper-parameters were basically untouched and met the basis explained in [PPO Hyperparameters and Ranges](https://medium.com/@aureliantactics).
+
+The details of the implementation and the test I made are summarized in the ```report.md``` (in this git repository). The main outcome is the following graph:
+
+![1562857315785](report_images/hiddSizeEffect.png)
+
+The graph shows the learning progession of different agents that differ from each other only by their neural-network hidden layer size. 
+
+One can see the hidden layer size effect on learning rate. What entreeged me the most is that *light* (small) neural networks reach the same final performance (more or less) as much *heavier* ones but in much more episodes.
+
+If you would like to reproduce the results above and\or study other parameter affects (such as learning rate, network architecture, other hyper-parameters), follow the following steps.
 
 
 
@@ -56,8 +82,6 @@ For this project, you will **not** need to install Unity - this is because we ha
 Then unzip (or decompress) the file. Rename directory to ```Reacher_Linux_1agent``` or ```Reacher_Linux_multAgents``` .
 
 (*For Windows users*) Check out [this link](https://support.microsoft.com/en-us/help/827218/how-to-determine-whether-a-computer-is-running-a-32-bit-version-or-64) if you need help with determining if your computer is running a 32-bit version or 64-bit version of the Windows operating system.
-
-
 
 
 
